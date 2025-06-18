@@ -5,9 +5,8 @@ import "./globals.css"
 import { CartProvider } from "@/components/shopping-cart"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.dev",
+  title: "EventHub",
+  description: "Desarrollado por Marlon Vinueza y Josué Aldaz",
 }
 
 // Actualizar el RootLayout para incluir el CartProvider
