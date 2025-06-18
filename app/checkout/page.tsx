@@ -59,28 +59,28 @@ export default function CheckoutPage() {
     cvv: "",
   })
 
-  const handleChange = (e) => {
-    const { id, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }))
-  }
+ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const { id, value } = e.target
+  setFormData((prev) => ({
+    ...prev,
+    [id]: value,
+  }))
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (step < 3) {
-      setStep(step + 1)
-    } else {
-      // Procesar pago
-      setIsProcessing(true)
-      setTimeout(() => {
-        setIsProcessing(false)
-        setIsComplete(true)
-        // clearCart() // En una app real
-      }, 2000)
-    }
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+  if (step < 3) {
+    setStep(step + 1)
+  } else {
+    setIsProcessing(true)
+    setTimeout(() => {
+      setIsProcessing(false)
+      setIsComplete(true)
+      // clearCart()
+    }, 2000)
   }
+}
+
 
   if (isComplete) {
     return (
