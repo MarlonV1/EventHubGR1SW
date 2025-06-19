@@ -17,9 +17,6 @@ jobs:
         with:
           node-version: '18'
 
-        - name: Verificar versión de Node.js
-        run: node -v
-
       - name: Instalar dependencias
         working-directory: ./aplicacion
         run: npm ci
