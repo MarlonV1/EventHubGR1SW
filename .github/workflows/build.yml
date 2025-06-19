@@ -12,10 +12,10 @@ jobs:
         with:
           node-version: '22.x'
       - name: Instalar dependencias
-        working-directory: ./app
+        working-directory: ./EventHubGR1SW
         run: |
           npm ci
       - name: Instalar dependencias
-        working-directory: ./app
+        working-directory: ./EventHubGR1SW
         run: |
           npm run build
