@@ -2,14 +2,13 @@ name: Build
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-        
       - name: Descargar el repo
         uses: actions/checkout@v4
 
@@ -18,8 +17,13 @@ jobs:
         with:
           node-version: '18'
 
+        - name: Verificar versión de Node.js
+        run: node -v
+
       - name: Instalar dependencias
+        working-directory: ./aplicacion
         run: npm ci
 
       - name: Construir la app
+        working-directory: ./aplicacion
         run: npm run build
